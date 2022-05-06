@@ -71,19 +71,12 @@ function Register() {
     }
   }
   return (
-    <div className="hero">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-4xl sm:text-3xl font-bold">Welcom Back!</h1>
-          <p className="py-6">
-            <strong>Makeweshare</strong> is a platform where you can easily
-            access accomodation either for rent or share with someone else.
-            without undergoing any stress or disappointment cause by agent.{' '}
-            <br /> we are fast and reliable.
-          </p>
-          <p>You can sign up with google</p>
-        </div>
-        <div className="card w-full max-w-2xl shadow bg-base-100">
+    <div className="container mx-auto">
+      <div className="grid place-items-center">
+        <div className="card w-full max-w-2xl shadow bg-base-100 mt-6">
+          <div className="card-title mt-4 ml-8">
+            <h1 className="text-xl">Register an Account</h1>
+          </div>
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
@@ -129,7 +122,7 @@ function Register() {
                 />
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn bg-neutral">
                   Register
                 </button>
               </div>

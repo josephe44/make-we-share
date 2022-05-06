@@ -48,19 +48,12 @@ function SignIn() {
   }
 
   return (
-    <div className="hero">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-4xl sm:text-3xl font-bold">Welcom Back!</h1>
-          <p className="py-6">
-            <strong>Makeweshare</strong> is a platform where you can easily
-            access accomodation either for rent or share with someone else.
-            without undergoing any stress or disappointment cause by agent.{' '}
-            <br /> we are fast and reliable.
-          </p>
-          <p>You can sign in with google</p>
-        </div>
-        <div className="card w-full max-w-2xl shadow bg-base-100">
+    <div className="container mx-auto">
+      <div className="grid place-items-center">
+        <div className="card w-full max-w-2xl shadow bg-base-100 mt-6">
+          <div className="card-title mt-4 ml-8">
+            <h1 className="text-xl">Welcome Back!</h1>
+          </div>
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
@@ -89,13 +82,16 @@ function SignIn() {
                   className="input input-bordered"
                 />
                 <label className="label flex justify-end">
-                  <Link to="#" className="label-text-alt link link-hover">
+                  <Link
+                    to="/forgot-password"
+                    className="label-text-alt link link-hover"
+                  >
                     Forgot password?
                   </Link>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn bg-neutral">Login</button>
               </div>
             </form>
             <div className="divider">OR</div>
