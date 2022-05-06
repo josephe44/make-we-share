@@ -12,12 +12,18 @@ function Navbar() {
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <Link to="/offers" className="text-sm">
+              <Link
+                to="/offers"
+                className="text-sm focus:bg-neutral-content focus:text-neutral"
+              >
                 <i className="fa-solid fa-tag text-xs"></i>Offers
               </Link>
             </li>
             <li>
-              <Link to="/profile" className="text-sm">
+              <Link
+                to="/profile"
+                className="text-sm focus:bg-neutral-content focus:text-neutral"
+              >
                 <i className="fa-regular fa-user text-xs"></i>Profile
               </Link>
             </li>
