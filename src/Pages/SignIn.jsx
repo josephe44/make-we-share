@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { toast } from 'react-toastify'
 
 function SignIn() {
   const [formData, setFormData] = useState({
@@ -18,10 +20,31 @@ function SignIn() {
     })
   }
 
+  // Handling SignIn with email and password
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData)
-    navigate('/')
+
+    try {
+      // getting auth value from getAuth
+      const auth = getAuth()
+
+      // SignIn user with email and password
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      )
+
+      // Check if User has an account(validation)
+      if (userCredential.user) {
+        // if true signIn and navigate to home
+        navigate('/')
+        toast.success('Welcome back!')
+      }
+    } catch (error) {
+      // if user doesn't have an account, display a toast with the error
+      toast.error('Bad User Credentials')
+    }
   }
 
   return (
@@ -37,7 +60,7 @@ function SignIn() {
           </p>
           <p>You can sign in with google</p>
         </div>
-        <div className="card w-full max-w-2xl shadow-2xl bg-base-100">
+        <div className="card w-full max-w-2xl shadow bg-base-100">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-control">
@@ -72,9 +95,7 @@ function SignIn() {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>
+                <button className="btn btn-primary">Login</button>
               </div>
             </form>
             <div className="divider">OR</div>
