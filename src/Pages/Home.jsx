@@ -10,7 +10,7 @@ function Home() {
     setUser(auth.currentUser)
   }, [auth.currentUser])
 
-  return <>{user ? <h1>{user.displayName}</h1> : 'Not Logged In'}</>
+  return user ? <h1>{user.displayName}</h1> : 'Not Logged In'
 }
 
 export default Home
