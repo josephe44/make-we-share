@@ -4,7 +4,7 @@ function ListingItem({ id, listing }) {
   return (
     <div className="container mx-auto">
       <div clasName="grid grid-cols-1 gap-4 items-center">
-        <Link to="/" className="card ml-4 mr-4 lg:w-3/4">
+        <Link to={`/category/${listing.type}/${id}`} className="card ml-4 mr-4 lg:w-3/4">
           <div className="grid grid-cols-2 gap-2 items-center">
             <figure className="h-40">
               <img
@@ -43,7 +43,7 @@ function ListingItem({ id, listing }) {
                 {listing.location}
               </p>
               <p className="font-bold lg:text-xl">{listing.name}</p>
-              <p className="bg-neutral font-bold p-2 text-white">
+              <p className="font-bold text-neutral">
                 ₦
                 {listing.offer
                   ? listing.discountedPrice

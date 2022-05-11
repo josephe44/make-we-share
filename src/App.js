@@ -8,6 +8,7 @@ import ForgotPassword from './Pages/ForgotPassword'
 import Offers from './Pages/Offers'
 import Profile from './Pages/Profile'
 import Categories from './Pages/Categories'
+import Listing from './Pages/Listing'
 import PrivateRoute from './components/PrivateRoute'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category/:categoryName" element={<Categories />} />
+          <Route path="/category/:categoryName/:listingId" element={<Listing />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>

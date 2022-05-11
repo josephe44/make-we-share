@@ -19,6 +19,7 @@ function Categories() {
 
   const params = useParams()
 
+  // Fetching all listings of a particular category
   useEffect(() => {
     const fetchListingCategories = async () => {
       try {
@@ -53,7 +54,7 @@ function Categories() {
     <div>
       <div className="container mx-auto">
         <div className="ml-6 my-6">
-          <p className='font-bold text-2xl'>
+          <p className="font-bold text-2xl">
             {params.categoryName === 'rent'
               ? 'Places for rent'
               : 'Places for share'}
@@ -73,7 +74,9 @@ function Categories() {
           ))}
         </>
       ) : (
-        <p>No listings for {params.categoryName}</p>
+        <div className="container mx-auto">
+          <p className='ml-6'>No listings for {params.categoryName}</p>
+        </div>
       )}
     </div>
   )

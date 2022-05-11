@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .loadingSpinnerContainer {
   position: fixed;
   top: 0;
@@ -19,7 +23,7 @@
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #36454f transparent 	#7393B3 transparent;
+  border-color: #36454f transparent #7393b3 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
