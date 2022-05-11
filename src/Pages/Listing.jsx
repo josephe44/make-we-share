@@ -37,7 +37,7 @@ function Listing() {
   }
 
   return (
-    <main>
+    <main className="mb-12">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
@@ -109,6 +109,18 @@ function Listing() {
           </Marker>
         </MapContainer>
       </div>
+      {auth.currentUser?.uid !== listing.userRef && (
+        <div className="container mx-auto">
+          <div className="mx-4">
+            <Link
+              className="btn btn-netural w-full"
+              to={`/contact/${listing.userRef}?listingName=${listing.name}`}
+            >
+              Contact Landlord
+            </Link>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
