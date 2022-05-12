@@ -1,19 +1,8 @@
-import { useState, useEffect } from 'react'
-import { getAuth } from 'firebase/auth'
 import { Link } from 'react-router-dom'
 import HomeSlider from '../components/HomeSlider'
-import HouseIamge1 from '../assets/house-image/houseImage1.jpg'
 import HouseIamge4 from '../assets/house-image/houseImage4.jpg'
 
 function Home() {
-  const [user, setUser] = useState(null)
-
-  const auth = getAuth()
-
-  useEffect(() => {
-    setUser(auth.currentUser)
-  }, [auth.currentUser])
-
   return (
     <>
       <div className="container mx-auto">
