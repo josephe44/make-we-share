@@ -7,6 +7,7 @@ import Register from './Pages/Register'
 import ForgotPassword from './Pages/ForgotPassword'
 import Offers from './Pages/Offers'
 import Profile from './Pages/Profile'
+import ContactLandlord from './Pages/ContactLandlord'
 import Categories from './Pages/Categories'
 import Listing from './Pages/Listing'
 import PrivateRoute from './components/PrivateRoute'
@@ -19,6 +20,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact/:landlordId" element={<ContactLandlord />} />
           <Route path="/category/:categoryName" element={<Categories />} />
           <Route path="/category/:categoryName/:listingId" element={<Listing />} />
           <Route path="/profile" element={<PrivateRoute />}>

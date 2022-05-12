@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function ListingItem({ id, listing }) {
   return (
     <div className="container mx-auto">
-      <div clasName="grid grid-cols-1 gap-4 items-center">
+      <div className="grid grid-cols-1 gap-4 items-center">
         <Link to={`/category/${listing.type}/${id}`} className="card ml-4 mr-4 lg:w-3/4">
           <div className="grid grid-cols-2 gap-2 items-center">
             <figure className="h-40">
@@ -32,7 +32,7 @@ function ListingItem({ id, listing }) {
                 </div>
                 <div>
                   <span className="mr-2">
-                    <i class="fa-solid fa-bath"></i>
+                    <i className="fa-solid fa-bath"></i>
                   </span>
                   {listing.bathrooms > 1
                     ? `${listing.bathrooms} Bathrooms`
