@@ -8,7 +8,7 @@ function Home() {
       <div className="container mx-auto">
         <div className="mx-4">
           <HomeSlider />
-          <p className="font-bold text-lg my-4">Categories</p>
+          <p className="font-bold text-lg mt-4">Categories</p>
           <div className="grid grid-cols-2 gap-8 items-center">
             <div className="mt-2">
               <div className="card lg:h-44 md:h-36 sm:h-20">
