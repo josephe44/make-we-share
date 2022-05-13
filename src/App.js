@@ -9,6 +9,7 @@ import Offers from './Pages/Offers'
 import Profile from './Pages/Profile'
 import ContactLandlord from './Pages/ContactLandlord'
 import Categories from './Pages/Categories'
+import CreateListing from './Pages/CreateListing'
 import Listing from './Pages/Listing'
 import PrivateRoute from './components/PrivateRoute'
 import 'react-toastify/dist/ReactToastify.css'
@@ -29,6 +30,7 @@ function App() {
           <Route path="/offers" element={<Offers />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<Register />} />
+          <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Router>
