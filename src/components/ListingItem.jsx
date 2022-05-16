@@ -6,7 +6,7 @@ function ListingItem({ id, listing, onDelete, onEdit }) {
       <div className="grid grid-cols-1 gap-4 items-center">
         <Link
           to={`/category/${listing.type}/${id}`}
-          className="card ml-4 mr-4 lg:w-3/4"
+          className="card ml-4 mb-6 mr-4 lg:w-3/4"
         >
           <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
             <div className="card">

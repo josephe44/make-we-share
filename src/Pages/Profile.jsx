@@ -98,7 +98,7 @@ function Profile() {
           </Link>
         </div>
         {!loading && listings?.length > 0 && (
-          <div className="mt-12 ">
+          <div className="mt-12 mb-4">
             <p className="ml-6 mb-2 font-bold text-lg">Your Listings</p>
             <ul>
               {listings.map((listing) => (

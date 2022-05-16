@@ -33,17 +33,18 @@ function ContactLandlord() {
   return (
     <div className="container mx-auto">
       <header>
-        <p>Contact Landlord</p>
+        <p className='font-bold text-2xl ml-4'>Contact Landlord</p>
       </header>
       {landlord !== null && (
-        <main>
+        <main className='mx-4'>
           <div>
-            <p>Contact: {landlord?.name}</p>
+            <p className='mt-4'>Contact: {landlord?.name}</p>
           </div>
           <form>
-            <div>
-              <label htmlFor="message">Message</label>
+            <div className='mb-6 mt-4 h-64'>
+              <label htmlFor="message">Message:</label>
               <textarea
+                className='form-control textarea textarea-bordered w-full h-full'
                 name="message"
                 id="message"
                 value={message}
@@ -51,11 +52,12 @@ function ContactLandlord() {
               ></textarea>
             </div>
             <a
+              className=''
               href={`mailto:${landlord.email}?Subject=${searchParams.get(
                 'listingName'
               )}&body=${message}`}
             >
-              <button type='button' className='btn btn-neutral w-full'>
+              <button type='button' className='btn btn-neutral w-full mt-8'>
                 Send Message
               </button>
             </a>
