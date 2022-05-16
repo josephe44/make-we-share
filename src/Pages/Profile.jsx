@@ -79,7 +79,7 @@ function Profile() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 mx-4 justify-between place-items-center">
           <div className="w-full card shadow-lg bg-secondary-content ml-4">
-            <h1 className="mt-2 ml-4 font-bold">Personal Details</h1>
+            <h1 className="mt-2 font-bold text-2xl ml-4">Personal Details</h1>
             <div className="card-body">
               <h5 className="card-title text-sm">{user.displayName}</h5>
               <p className="card-text text-xs">{user.email}</p>
@@ -87,7 +87,7 @@ function Profile() {
           </div>
           <button
             onClick={handleLogOut}
-            className="w-full md:w-1/2 sm:w-full btn btn-neutral"
+            className="w-full md:w-1/2 sm:w-full btn btn-error text-white mt-6"
           >
             Logout
           </button>

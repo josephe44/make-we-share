@@ -223,7 +223,7 @@ function CreateListing() {
         <form onSubmit={onSubmit}>
           {/* Rent or Share */}
           <div className=" form-control">
-            <label>Rent / Share</label>
+            <label className='mb-1 text-lg font-semibold'>Rent / Share</label>
             <div className="grid grid-cols-2 gap-4 mb-4">
               <button
                 type="button"
@@ -250,7 +250,7 @@ function CreateListing() {
             </div>
             {/* Name of listing */}
             <div className="form-control mb-4">
-              <label>Name</label>
+              <label className='mb-1 text-lg font-semibold'>Name</label>
               <input
                 className="input input-bordered"
                 type="text"
@@ -265,7 +265,7 @@ function CreateListing() {
             {/* Bedrooms and Bathrooms */}
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="form-control">
-                <label>Bedrooms</label>
+                <label className='mb-1 text-lg font-semibold'>Bedrooms</label>
                 <input
                   className="input input-bordered"
                   type="number"
@@ -278,7 +278,7 @@ function CreateListing() {
                 />
               </div>
               <div className="form-control">
-                <label>Bathrooms</label>
+                <label className='mb-1 text-lg font-semibold'>Bathrooms</label>
                 <input
                   className="input input-bordered"
                   type="number"
@@ -293,7 +293,7 @@ function CreateListing() {
             </div>
             {/* Parking */}
             <div>
-              <label>Parking spot</label>
+              <label className='mb-1 text-lg font-semibold'>Parking spot</label>
               <div className="grid grid-cols-2 gap-4 mb-4 form-control">
                 <button
                   type="button"
@@ -321,7 +321,7 @@ function CreateListing() {
             </div>
             {/* furnished */}
             <div className="mb-4">
-              <label>Furnished</label>
+              <label className='mb-1 text-lg font-semibold'>Furnished</label>
               <div className="grid grid-cols-2 gap-4 form-control">
                 <button
                   type="button"
@@ -350,7 +350,7 @@ function CreateListing() {
             {/* Address */}
             <div className="mb-4">
               <div className="mb-4">
-                <label>Address</label>
+                <label className='mb-1 text-lg font-semibold'>Address</label>
                 <textarea
                   className="form-control textarea textarea-bordered w-full"
                   type="text"
@@ -363,10 +363,10 @@ function CreateListing() {
               {/* geolocationEnabled */}
               {!geolocationEnabled && (
                 <>
-                  <label className="">Gelocation</label>
+                  <label className='mb-1 text-lg font-semibold'>Gelocation</label>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="form-control">
-                      <label>Latitude</label>
+                      <label className='mb-1 text-lg font-semibold'>Latitude</label>
                       <input
                         className="input input-bordered"
                         type="number"
@@ -377,7 +377,7 @@ function CreateListing() {
                       />
                     </div>
                     <div className="form-control">
-                      <label>Longitude</label>
+                      <label className='mb-1 text-lg font-semibold'>Longitude</label>
                       <input
                         className="input input-bordered"
                         type="number"
@@ -392,7 +392,7 @@ function CreateListing() {
               )}
               {/* Offer */}
               <div className="mb-4">
-                <label>Offers</label>
+                <label className='mb-1 text-lg font-semibold'>Offers</label>
                 <div className="grid grid-cols-2 gap-4 form-control">
                   <button
                     type="button"
@@ -422,7 +422,7 @@ function CreateListing() {
               <div className="mb-4">
                 <div className="grid w-1/2 mb-4">
                   <div className="form-control">
-                    <label>Regular Price</label>
+                    <label className='mb-1 text-lg font-semibold'>Regular Price</label>
                     <div className="flex items-center">
                       <input
                         className="input input-bordered"
@@ -440,7 +440,7 @@ function CreateListing() {
                     {offer && (
                       <>
                         <div className="form-control mb-4">
-                          <label>Discounted Price</label>
+                          <label className='mb-1 text-lg font-semibold'>Discounted Price</label>
                           <div className="flex items-center">
                             <input
                               className="input input-bordered"
@@ -458,7 +458,7 @@ function CreateListing() {
                     )}
                     {/* Images for th listing */}
                     <div className="form-control mb-4">
-                      <label className="mb-2">Images</label>
+                      <label className='mb-2 text-lg font-semibold'>Images</label>
                       <p className="text-sm text-gray-400">
                         The First image will be the cover (max 6)
                       </p>
