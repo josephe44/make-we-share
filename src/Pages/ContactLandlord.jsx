@@ -33,7 +33,7 @@ function ContactLandlord() {
   return (
     <div className="container mx-auto">
       <header>
-        <p className='font-bold text-2xl ml-4'>Contact Landlord</p>
+        <p className='font-bold text-2xl ml-4 mt-2'>Contact Landlord</p>
       </header>
       {landlord !== null && (
         <main className='mx-4'>
