@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import {
   getStorage,
@@ -7,16 +7,17 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { doc, updateDoc, getDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { v4 as uuidv4 } from 'uuid'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
 
-function CreateListing() {
+function EditListing() {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
   const [boxChecked, setBoxChecked] = useState(true)
   const [loading, setLoading] = useState(false)
+  const [listing, setListing] = useState()
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
@@ -49,9 +50,38 @@ function CreateListing() {
     longitude,
   } = formData
 
-  const navigate = useNavigate()
   const auth = getAuth()
+  const navigate = useNavigate()
+  const params = useParams()
 
+  // Redirect if listing is not user's
+  useEffect(() => {
+    if (listing && listing.userRef !== auth.currentUser.uid) {
+      toast.error('You are not authorized to edit this listing')
+      navigate('/')
+    }
+  }, [listing, navigate, auth.currentUser.uid])
+
+  // Fetch listing to edit
+  useEffect(() => {
+    setLoading(true)
+    const fetchListing = async () => {
+      const docRef = doc(db, 'listings', params.listingId)
+      const docSnap = await getDoc(docRef)
+      if (docSnap.exists()) {
+        setListing(docSnap.data())
+        setFormData({ ...docSnap.data(), address: docSnap.data().location })
+        setLoading(false)
+      } else {
+        navigate('/')
+        toast.error('Listing does not exist')
+      }
+    }
+
+    fetchListing()
+  }, [params.listingId, navigate])
+
+  // set userRef to login user
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -174,7 +204,8 @@ function CreateListing() {
     !formDataCopy.offer && delete formDataCopy.discountedPrice
 
     // Saving formDataCopy to the firebase database
-    const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+    const docRef = doc(db, 'listings', params.listingId)
+    await updateDoc(docRef, formDataCopy)
     setLoading(false)
     toast.success('Listing created successfully')
     navigate(`/category/${formDataCopy.type}/${docRef.id}`)
@@ -234,6 +265,7 @@ function CreateListing() {
       <header className="mt-4">
         <p className="font-bold text-2xl ml-4">Create a Listing</p>
       </header>
+
       <main className="mt-8 mx-4 md:w-full lg:w-1/2">
         <form onSubmit={onSubmit}>
           {/* Rent or Share */}
@@ -379,7 +411,9 @@ function CreateListing() {
               {/* check to use geocode manually or use api geocode */}
               <div className="form-control mt-4 w-40">
                 <label className="cursor-pointer flex">
-                  <span className="label-text mr-2 font-semibold">Add your geocode</span>
+                  <span className="label-text mr-2 font-semibold">
+                    Add your geocode
+                  </span>
                   <input
                     type="checkbox"
                     defaultChecked={boxChecked}
@@ -389,15 +423,16 @@ function CreateListing() {
                   />
                 </label>
               </div>
+
               {/* geolocationEnabled */}
               {!geolocationEnabled && (
                 <>
                   <label className="mb-1 text-lg font-semibold">
-                    Gelocation:
+                    Gelocation
                   </label>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="form-control">
-                      <label className="mb-1 text-md font-semibold">
+                      <label className="mb-1 text-lg font-semibold">
                         Latitude
                       </label>
                       <input
@@ -410,7 +445,7 @@ function CreateListing() {
                       />
                     </div>
                     <div className="form-control">
-                      <label className="mb-1 text-md font-semibold">
+                      <label className="mb-1 text-lg font-semibold">
                         Longitude
                       </label>
                       <input
@@ -532,4 +567,4 @@ function CreateListing() {
   )
 }
 
-export default CreateListing
+export default EditListing

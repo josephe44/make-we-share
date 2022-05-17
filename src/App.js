@@ -10,6 +10,7 @@ import Profile from './Pages/Profile'
 import ContactLandlord from './Pages/ContactLandlord'
 import Categories from './Pages/Categories'
 import CreateListing from './Pages/CreateListing'
+import EditListing from './Pages/EditListing'
 import Listing from './Pages/Listing'
 import PrivateRoute from './components/PrivateRoute'
 import 'react-toastify/dist/ReactToastify.css'
@@ -31,6 +32,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<Register />} />
           <Route path="/create-listing" element={<CreateListing />} />
+          <Route path="/edit-listing/:listingId" element={<EditListing />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Router>
