@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './Pages/Home'
 import SignIn from './Pages/SignIn'
 import Register from './Pages/Register'
@@ -24,7 +25,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact/:landlordId" element={<ContactLandlord />} />
           <Route path="/category/:categoryName" element={<Categories />} />
-          <Route path="/category/:categoryName/:listingId" element={<Listing />} />
+          <Route
+            path="/category/:categoryName/:listingId"
+            element={<Listing />}
+          />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
@@ -35,6 +39,7 @@ function App() {
           <Route path="/edit-listing/:listingId" element={<EditListing />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
+        <Footer />
       </Router>
       <ToastContainer />
     </>

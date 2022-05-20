@@ -93,12 +93,13 @@ function Listing() {
       </div>
       {/* MAP */}
       <h3 className="ml-6 mb-4 text-xl font-bold">Location</h3>
-      <div className="w-full mb-8 h-96 overflow-x-hidden">
+      <div className="w-full mb-8 h-96 overflow-x-hidden -z-0">
         <MapContainer
           style={{ height: '100%', width: '100%' }}
           center={[listing.geolocation.lat, listing.geolocation.lng]}
           zoom={13}
           scrollWheelZoom={false}
+          className='-z-0'
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

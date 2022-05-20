@@ -3,13 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { getAuth } from 'firebase/auth'
 import {
   doc,
-  updateDoc,
   collection,
   getDocs,
   query,
   where,
   orderBy,
-  limit,
   deleteDoc,
 } from 'firebase/firestore'
 import ListingItem from '../components/ListingItem'
