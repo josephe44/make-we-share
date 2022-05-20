@@ -74,7 +74,7 @@ function Profile() {
 
   return (
     <div className="mt-4">
-      <div className="container mx-auto">
+      <div className="2xl:container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 mx-4 justify-between place-items-center">
           <div className="w-full card shadow-lg bg-secondary-content ml-4">
             <h1 className="mt-2 font-bold text-2xl ml-4">Personal Details</h1>

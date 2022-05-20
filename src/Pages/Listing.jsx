@@ -37,7 +37,7 @@ function Listing() {
   }
 
   return (
-    <main className="mb-12">
+    <main className="mb-32">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}

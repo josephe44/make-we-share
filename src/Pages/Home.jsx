@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import HomeSlider from '../components/HomeSlider'
-import HouseIamge4 from '../assets/house-image/houseImage4.jpg'
+import HouseImage1 from '../assets/house-image/houseImage1.jpg'
+import HouseImage2 from '../assets/house-image/houseImage2.jpg'
 
 function Home() {
   return (
     <>
-      <div className="container mx-auto">
-        <div className="mx-4">
+      <div className="2xl:container mx-auto">
+        <div className="mx-4 mb-44">
           <HomeSlider />
           <p className="font-bold text-lg mt-4">Categories</p>
           <div className="grid grid-cols-2 gap-8 items-center">
@@ -15,8 +16,8 @@ function Home() {
                 <Link to="/category/rent">
                   <figure>
                     <img
-                      className="w-full h-full"
-                      src={HouseIamge4}
+                      className="object-cover h-44 w-full"
+                      src={HouseImage2}
                       alt="houseImage"
                     />
                   </figure>
@@ -29,9 +30,10 @@ function Home() {
                 <Link to="/category/share">
                   <figure>
                     <img
-                      className="w-full h-full"
-                      src={HouseIamge4}
+                      className="object-cover h-44 w-full"
+                      src={HouseImage1}
                       alt="houseImage"
+                      
                     />
                   </figure>
                 </Link>

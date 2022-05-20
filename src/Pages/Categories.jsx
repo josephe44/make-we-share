@@ -51,7 +51,7 @@ function Categories() {
   }, [params.categoryName])
 
   return (
-    <div>
+    <div className='mb-24'>
       <div className="container mx-auto">
         <div className="ml-6 my-6">
           <p className="font-bold text-2xl">

@@ -72,7 +72,7 @@ function Register() {
   }
   return (
     <div className="container mx-auto">
-      <div className="grid place-items-center">
+      <div className="grid place-items-center mb-28">
         <div className="card w-full max-w-2xl shadow bg-base-100 mt-6">
           <div className="card-title mt-4 ml-8">
             <h1 className="text-xl">Register an Account</h1>

@@ -11,7 +11,7 @@ function Footer() {
             className="cursor-pointer flex flex-col items-center"
             onClick={() => navigate('/')}
           >
-            <p><i class="fa-solid fa-house"></i></p>
+            <p><i className="fa-solid fa-house"></i></p>
             <p>Explore</p>
           </li>
           <li

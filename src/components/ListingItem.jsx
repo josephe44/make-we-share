@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function ListingItem({ id, listing, onDelete, onEdit }) {
   return (
-    <div className="container mx-auto">
+    <div className="2xl:container mx-auto">
       <div className="grid grid-cols-1 gap-4 items-center">
         <div className="card ml-4 mb-6 mr-4 lg:w-3/4">
           <Link to={`/category/${listing.type}/${id}`}>

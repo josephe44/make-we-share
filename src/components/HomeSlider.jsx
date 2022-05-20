@@ -44,7 +44,7 @@ function HomeSlider() {
   return (
     listings && (
       <>
-        <p className='mt-8 mb-2 font-bold text-lg'>Recommended</p>
+        <p className='mt-4 mb-2 font-bold text-lg'>Recommended</p>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
