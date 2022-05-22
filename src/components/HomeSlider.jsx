@@ -44,7 +44,7 @@ function HomeSlider() {
   return (
     listings && (
       <>
-        <p className='mt-4 mb-2 font-bold text-lg'>Recommended</p>
+        <p className="mt-4 mb-2 font-bold text-lg">Recommended</p>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
@@ -61,9 +61,11 @@ function HomeSlider() {
                 }}
                 className="relative w-full h-72"
               >
-                <p className="absolute top-24 p-2 max-w-full font-bold lg:text-xl md:text-lg bg-neutral text-white">{data.name}</p>
+                <p className="absolute top-24 p-2 max-w-full font-bold lg:text-xl md:text-lg bg-neutral text-white">
+                  {data.name}
+                </p>
                 <p className="absolute top-36 p-2 max-w-full font-bold text-md bg-white text-neutral">
-                  ${data.discountedPrice ?? data.regularPrice}
+                  ₦{data.discountedPrice ?? data.regularPrice}
                   {''}
                   {data.type === 'rent' && ' / month'}
                 </p>
